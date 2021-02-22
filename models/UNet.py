@@ -7,6 +7,7 @@ from init_weights import init_weights
 from torchvision import models
 import numpy as np
 
+
 class UNet(nn.Module):
 
     def __init__(self, in_channels=3, n_classes=1, feature_scale=4, is_deconv=True, is_batchnorm=True):
@@ -50,7 +51,7 @@ class UNet(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 init_weights(m, init_type='kaiming')
 
-    def dotProduct(self,seg,cls):
+    def dotProduct(self, seg, cls):
         B, N, H, W = seg.size()
         seg = seg.view(B, N, H * W)
         final = torch.einsum("ijk,ij->ijk", [seg, cls])
