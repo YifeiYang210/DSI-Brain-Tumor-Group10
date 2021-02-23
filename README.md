@@ -50,22 +50,23 @@
 
 
 
-|      | 模型                       | epoch | val_loss     | val_accuracy  |
+|      | Model                     | epoch | val_accuracy | test_accuracy |
 | ---- | -------------------------- | ----- | ------------ | ------------- |
-| 分类 | VGG                        | 20    | 0.2813       | 0.941         |
-|      | VGG                        | 50    | 0.3201       | 0.943         |
-|      | VGG(+pretrain)             | 15    | 0.2335       | 0.954         |
-|      | ResNet50V2                 | 100   | -            | 0.994         |
+| 分类 | VGG16                      | 20    | 94.1 | 90       |
+|      | VGG16                      | 50    | 94.3 | 90       |
+|      | VGG16(+pretrain)           | 15    | 95.4 | 90       |
+|      | ResNet50V2                 | 100   | **99.4** (?) | 89       |
+| | **VGG19(+aug)** | 30 | 94.6 | **92** |
 |      |                            |       |              |               |
 |      |                            | epoch | val_accuracy | test_accuracy |
-| 分割 | Unet                       | 25    | 87.68        | 82.00         |
-|      | Unet(VGG19+ImageNet)       | 68    | 93.58        | **82.29**     |
-|      | Unet(ResNet152V2+ImageNet) | 28    | 91.58        | 82.08         |
-|      | Unet++(4depth)             | 15    | 78.65        | 68.02         |
-|      | Unet++(4depth+ResNet50)    | 25    | 65.98        | 69.56         |
-|      | Unet++(4depth+ResNet50V2)  | 26    | 82.51        | 73.24         |
-|      | Unet++(5depth)             | 30    | 94.03        | 71.38         |
-|      | Unet+++(5depth+vgg19)      | 73    | 90.11        | 81.86         |
+| 分割 | Unet                       | 25    | 82.00   | **80**   |
+|      | Unet(VGG19+ImageNet)       | 68    | **82.29** | 78 |
+|      | Unet(ResNet152V2+ImageNet) | 28    | 82.08   | 78            |
+|      | Unet++(4depth)             | 15    | 68.02   | 71       |
+|      | Unet++(4depth+ResNet50)    | 25    | 69.56   | 75       |
+|      | Unet++(4depth+ResNet50V2)  | 26    | 73.24   | 77      |
+|      | Unet++(5depth)             | 30    | 71.38   | 76      |
+|      | Unet+++(5depth+vgg19)      | 73    | 81.86   | 78       |
 
 
 
